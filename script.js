@@ -27,3 +27,19 @@ modal.addEventListener('click', function(e) {
         modal.style.display = 'none';
     }
 });
+
+nextBtn.addEventListener('click', function() {
+    currentImageIndex++;
+    if (currentImageIndex >= images.length) {
+        currentImageIndex = 0; 
+    }
+    showImage(currentImageIndex);
+});
+
+prevBtn.addEventListener('click', function() {
+    currentImageIndex--;
+    if (currentImageIndex < 0) {
+        currentImageIndex = images.length - 1; 
+    }
+    showImage(currentImageIndex);
+});
