@@ -2,13 +2,21 @@ const images = document.querySelectorAll('.photo-item img');
 const modal = document.getElementById('imageModal');
 const modalImage = document.getElementById('modalImage');
 const closeBtn = document.querySelector('.close-btn');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+let currentImageIndex = 0;
 
-images.forEach(function(img) {
+images.forEach(function(img, index) {
     img.addEventListener('click', function() {
         modal.style.display = 'block'; 
-        modalImage.src = this.src; 
+        showImage(index);
     });
 });
+
+function showImage(index) {
+    modalImage.src = images[index].src; 
+    currentImageIndex = index;
+}
 
 closeBtn.addEventListener('click', function() {
     modal.style.display = 'none';
