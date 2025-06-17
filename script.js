@@ -51,5 +51,25 @@ document.addEventListener('keydown', function(e) {
         if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
             e.preventDefault(); 
         }
+
+        if (e.key === 'ArrowRight') {
+            currentImageIndex++;
+            if (currentImageIndex >= images.length) {
+                currentImageIndex = 0;
+            }
+            showImage(currentImageIndex);
+        }
+        
+        if (e.key === 'ArrowLeft') {
+            currentImageIndex--;
+            if (currentImageIndex < 0) {
+                currentImageIndex = images.length - 1;
+            }
+            showImage(currentImageIndex);
+        }
+        
+        if (e.key === 'Escape') {
+            modal.style.display = 'none';
+        }
     }
 });        
