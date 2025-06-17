@@ -43,3 +43,13 @@ prevBtn.addEventListener('click', function() {
     }
     showImage(currentImageIndex);
 });
+
+document.addEventListener('keydown', function(e) {
+
+    if (modal.style.display === 'block') {
+        
+        if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+            e.preventDefault(); 
+        }
+    }
+});        
